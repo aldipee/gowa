@@ -31,7 +31,11 @@ func (mycli *MyClient) register() {
 }
 
 func (mycli *MyClient) eventHandler(evt interface{}) {
+	
+	fmt.Println("Event:", evt)
+
 	switch v := evt.(type) {
+	
 	case *events.Message:
 		newMessage := v.Message
 		msg := newMessage.GetConversation()
